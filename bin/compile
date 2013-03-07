@@ -134,7 +134,7 @@ if [ "$GRAILS_VERSION" != "1.3.7" ] ; then
     BUILDCMD_OPT="-plain-output"
 fi
 
-CLEANCMD="$GRAILS_CMD -Divy.default.ivy.user.dir=$CACHE_DIR clean --non-interactive"
+CLEANCMD="$GRAILS_CMD -Divy.default.ivy.user.dir=$CACHE_DIR install-plugin resources --non-interactive"
 echo "-----> Executing $CLEANCMD"
 eval "$CLEANCMD" | sed -u 's/^/       /'
 check_build_status
